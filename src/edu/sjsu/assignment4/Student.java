@@ -27,6 +27,8 @@ public class Student implements Comparable<Student> {
 
     @Override
     public int compareTo(Student o) {
-        return this.id-o.id;
+       if (this.id!=o.id) return this.id-o.id;
+       else return 0;
+       //else return this.name.compareTo(o.name);
     }
 }
