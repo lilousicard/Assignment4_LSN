@@ -23,6 +23,7 @@ public class AppointmentManager {
             apptMap.remove(appointment);
             return true;
         }
+
         return false;
 
     }

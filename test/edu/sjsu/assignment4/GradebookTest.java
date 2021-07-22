@@ -55,7 +55,7 @@ class GradebookTest {
         test.addStudent(1010,"Helen",'A');
         test.addStudent(1020,"John",'B');
         test.addStudent(1013, "Maria", 'C');
-        //test.printGrade();
+        test.printGrade(new StudentComparator());
 
 
     }

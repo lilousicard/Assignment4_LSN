@@ -1,9 +1,6 @@
 package edu.sjsu.assignment4;
 
-import java.util.Comparator;
-import java.util.Map;
-import java.util.SortedMap;
-import java.util.TreeMap;
+import java.util.*;
 
 public class Gradebook {
     TreeMap<Student,Character> sm;
@@ -58,16 +55,28 @@ public class Gradebook {
 
     public void printGrade(Comparator<Student> comparator)
     {
-        /*
         //TODO
-        int x=1;
-        for (Map.Entry<Student,Character> entry : sm.entrySet())
-        {
-            System.out.println(x+"."+entry.getKey().getName()+": "+entry.getValue());
-            x++;
-        }
+        if (comparator == null) {
 
-         */
+            for (Map.Entry<Student, Character> entry : sm.entrySet()) {
+                System.out.println(entry.getKey().getId() + "." + entry.getKey().getName() + ": " + entry.getValue());
+
+            }
+
+        } else {
+            ArrayList<Student> ls;
+            ls = new ArrayList<>(sm.keySet());
+            ls.sort(comparator);
+            for (Student s : ls) {
+                StringBuilder sb = new StringBuilder();
+                sb.append(s.getId())
+                        .append(".")
+                        .append(s.getName())
+                        .append(": ")
+                        .append(sm.get(s));
+                System.out.println(sb.toString());
+            }
+        }
 
 
     }
