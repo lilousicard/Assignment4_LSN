@@ -20,6 +20,10 @@ public class OnetimeAppointment extends Appointment{
         return this.getStartDate().isEqual(date);
     }
 
+
+    /** To get the type of appointment
+     * @return the type of appointment
+     */
     @Override
     public String type() {
         return "One Time";

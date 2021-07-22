@@ -20,6 +20,9 @@ public class DailyAppointment extends Appointment{
         return (isBetween(date));
     }
 
+    /** return the type of appointment
+     * @return a string for the type
+     */
     @Override
     public String type() {
         return "Daily";

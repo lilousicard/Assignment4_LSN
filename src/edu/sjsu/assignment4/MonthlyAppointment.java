@@ -24,6 +24,9 @@ public class MonthlyAppointment extends Appointment{
         return false;
     }
 
+    /** return the type of appointment
+     * @return a string for the type
+     */
     @Override
     public String type() {
         return "Monthly";

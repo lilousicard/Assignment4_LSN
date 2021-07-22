@@ -7,6 +7,11 @@ import java.util.*;
 
 public class MyCollections {
 
+    /**
+     * print the content of a collection of file
+     * @param fileQueue the collection of file
+     * @throws FileNotFoundException
+     */
     public static void printFiles(Queue <File> fileQueue) throws FileNotFoundException {
         while (!fileQueue.isEmpty())
         {
@@ -14,9 +19,13 @@ public class MyCollections {
             printFile(toPrint);
             fileQueue.poll();
         }
-
-
     }
+
+    /**
+     * Print the content of a file
+     * @param file file whose content need to be printed
+     * @throws FileNotFoundException
+     */
     private static void printFile(File file) throws FileNotFoundException {
         Scanner input = new Scanner(file);
 
@@ -27,6 +36,11 @@ public class MyCollections {
         System.out.println("***");
     }
 
+    /**
+     * to remove every nth element of a collection of employee names
+     * @param name the linked list that will be downsize
+     * @param n the index of removal
+     */
     public static void downsize(LinkedList<String> name, int n)
     {
         ListIterator<String> iterator = name.listIterator();
@@ -44,6 +58,11 @@ public class MyCollections {
 
     }
 
+    /**
+     * Check that the ( and [ character are balance and mathematically correct
+     * @param input the string to check if it is balance
+     * @return true or false if it is balance or not
+     */
     public static boolean isBalanced(String input){
         Stack<Character> list = new Stack<>();
         // navigate the entire string

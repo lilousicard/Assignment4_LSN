@@ -33,20 +33,15 @@ class GradebookTest {
 
     }
 
-    @Test
-    void addStudent() {
-    }
-
-    @Test
-    void testAddStudent() {
-    }
-
-    @Test
-    void deleteStudent() {
-    }
 
     @Test
     void updateGrade() {
+        Gradebook test = new Gradebook();
+        test.addStudent(1010,"Helen",'A');
+        test.updateGrade(1010,'B');
+        test.printGrade(null);
+        test.updateGrade(1010,'e');
+        test.printGrade(null);
     }
 
     @Test
@@ -55,7 +50,7 @@ class GradebookTest {
         test.addStudent(1010,"Helen",'A');
         test.addStudent(1020,"John",'B');
         test.addStudent(1013, "Maria", 'C');
-        test.printGrade(new StudentComparator());
+        //test.printGrade(new StudentComparator());
 
 
     }

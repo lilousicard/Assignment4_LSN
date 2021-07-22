@@ -89,11 +89,21 @@ public abstract class Appointment implements Comparable<Appointment> {
     }
 
 
+    /**
+     * Check if two appointment are equal, that is they have the same description
+     * @param newAppointment appointment to compare the this object with
+     * @return true or false
+     */
     public boolean equals(Appointment newAppointment)
     {
         return this.description.equals(newAppointment.description);
     }
 
+
+    /**
+     * Create a string that explain the appointment in a way non coder will understand
+     * @return the description string
+     */
     public String toString()
     {
         //System.out.println(description+", from "+startDate+" to "+endDate+", "+ type());

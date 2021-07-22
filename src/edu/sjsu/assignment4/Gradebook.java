@@ -8,6 +8,13 @@ public class Gradebook {
         sm = new TreeMap<Student,Character>();
     }
 
+    /**
+     * The function update the tree map so that a student object will be added. The student object is created in the function
+     * @param id student id
+     * @param name student name
+     * @param grade student grade
+     * @return true or false if the student was successfully added
+     */
     public boolean addStudent(int id, String name, char grade)
     {
         Student student = new Student(id,name);
@@ -26,11 +33,22 @@ public class Gradebook {
     }
 
 
+    /**
+     * Add a student to the treemap without an official grade
+     * @param id student id
+     * @param name student name
+     * @return true or false
+     */
     public boolean addStudent(int id, String name)
     {
         return addStudent(id, name, 'N');
     }
 
+    /**
+     * Delete a particular student from the treemap
+     * @param id the student's id of the student that will be deleted
+     * @return true or false
+     */
     public boolean deleteStudent(int id)
     {
         Student temp = new Student(id);
@@ -42,6 +60,12 @@ public class Gradebook {
         return false;
     }
 
+    /**
+     * Change the grade of a student if that grade is valid
+     * @param id student's id
+     * @param newGrade the new grade
+     * @return true or false
+     */
     public boolean updateGrade (int id, char newGrade)
     {
         Student temp = new Student(id);
@@ -53,9 +77,13 @@ public class Gradebook {
         return false;
     }
 
+    /**
+     * Print every element of the treemap in the format id.name: grade
+     * @param comparator the parameter to sort the display
+     */
     public void printGrade(Comparator<Student> comparator)
     {
-        //TODO
+
         if (comparator == null) {
 
             for (Map.Entry<Student, Character> entry : sm.entrySet()) {
@@ -82,14 +110,13 @@ public class Gradebook {
     }
 
 
-
-
+    /**
+     * Check if the grade enter is either A, B, C, D, F. Return true if it is.
+     * @param grade The char that needs to be check
+     * @return true or false
+     */
     private boolean isValidGrade(char grade) {
         return "ABCDF".contains(String.valueOf(grade));
-    }
-    private boolean isEmpty()
-    {
-        return sm.isEmpty();
     }
 
 }
