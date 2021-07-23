@@ -1,5 +1,7 @@
 package edu.sjsu.assignment4;
 
+import java.util.Objects;
+
 public class Student implements Comparable<Student> {
 
     private int id;
@@ -50,5 +52,23 @@ public class Student implements Comparable<Student> {
        if (this.id!=o.id) return this.id-o.id;
        else return 0;
        //else return this.name.compareTo(o.name);
+    }
+
+    /**
+     * Check if two student are the same. That is that they have the same id
+     * @return true if the student are the same
+     */
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return id == student.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

@@ -3,13 +3,13 @@ package edu.sjsu.assignment4;
 import java.util.*;
 
 public class Gradebook {
-    TreeMap<Student,Character> sm;
+    HashMap<Student,Character> sm;
     public Gradebook(){
-        sm = new TreeMap<Student,Character>();
+        sm = new HashMap<Student,Character>();
     }
 
     /**
-     * The function update the tree map so that a student object will be added. The student object is created in the function
+     * The function update the hash map so that a student object will be added. The student object is created in the function
      * @param id student id
      * @param name student name
      * @param grade student grade
@@ -34,7 +34,7 @@ public class Gradebook {
 
 
     /**
-     * Add a student to the treemap without an official grade
+     * Add a student to the hash map without an official grade
      * @param id student id
      * @param name student name
      * @return true or false
@@ -45,7 +45,7 @@ public class Gradebook {
     }
 
     /**
-     * Delete a particular student from the treemap
+     * Delete a particular student from the hashmap
      * @param id the student's id of the student that will be deleted
      * @return true or false
      */

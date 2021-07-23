@@ -15,7 +15,9 @@ class GradebookTest {
         Gradebook test = new Gradebook();
         assertTrue(test.addStudent(1010,"Helen",'A'));
         assertFalse(test.addStudent(1010,"John",'B'));
-        
+        //test.addStudent(1010,"John",'B');
+        //test.printGrade(null);
+
     }
 
     @Test
@@ -24,6 +26,7 @@ class GradebookTest {
         test.addStudent(1010,"Helen",'A');
         test.addStudent(1020,"Helen",'A');
         assertTrue(test.deleteStudent(1010));
+       // test.printGrade(null);
         assertFalse(test.deleteStudent(1021));
         assertFalse(test.sm.isEmpty());
         assertTrue(test.deleteStudent(1020));
@@ -39,18 +42,21 @@ class GradebookTest {
         Gradebook test = new Gradebook();
         test.addStudent(1010,"Helen",'A');
         test.updateGrade(1010,'B');
-        test.printGrade(null);
+        //test.printGrade(null);
         test.updateGrade(1010,'e');
-        test.printGrade(null);
+        //test.printGrade(null);
     }
 
     @Test
     void printGradeTest() {
         Gradebook test = new Gradebook();
+        test.addStudent(1013, "Maria", 'C');
         test.addStudent(1010,"Helen",'A');
         test.addStudent(1020,"John",'B');
-        test.addStudent(1013, "Maria", 'C');
-        //test.printGrade(new StudentComparator());
+
+        test.printGrade(new StudentComparator());
+        System.out.println();
+        test.printGrade(null);
 
 
     }
